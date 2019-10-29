@@ -9,6 +9,7 @@ import 'models/genres.dart';
 import 'models/movies.dart';
 import 'screens/fav_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +19,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool loaded = false;
+  static bool loaded = false;
 
   Future<void> getSelectedGenres() async {
     final url = 'http://saifkazi.pythonanywhere.com//get_select_genres';
@@ -27,13 +28,19 @@ class _MyAppState extends State<MyApp> {
       final Map<String, dynamic> data = jsonDecode(response.body);
       Genres.selectedGenres = data["Genres"];
       Movies.likedMovies = data["Liked_Movies"];
-      loaded = true;
+      new Future.delayed(const Duration(milliseconds: 800), () {
+        setState(() {
+          loaded = true;
+        });
+      });
+
     });
   }
 
   @override
   void initState() {
     getSelectedGenres();
+
   }
 
   @override
@@ -47,11 +54,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Binge!',
       theme: myTheme,
       home: !loaded
-          ? Container(
-              alignment: Alignment.center,
-              color: Color.fromRGBO(23, 32, 42, 1),
-              child: CircularProgressIndicator(),
-            )
+          ? SplashScreen()
           : Genres.selectedGenres.length != 0 ? MoviesScreen() : HomeScreen(),
       debugShowCheckedModeBanner: false,
       routes: {
