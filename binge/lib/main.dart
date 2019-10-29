@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:binge/screens/about_us_screen.dart';
 import 'package:binge/screens/movie_detail_screen.dart';
 import 'package:binge/screens/movies_screen.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,7 @@ class _MyAppState extends State<MyApp> {
         HomeScreen.routeName: (ctx) => HomeScreen(),
         MovieDetailScreen.routeName: (ctx) => MovieDetailScreen(),
         FavScreen.routeName: (ctx) => FavScreen(),
+        AboutUsScreen.routeName: (ctx) => AboutUsScreen(),
       },
     );
   }

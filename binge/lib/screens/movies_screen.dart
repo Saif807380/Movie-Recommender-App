@@ -55,7 +55,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                           ? (MediaQuery.of(context).size.height -
                                   appBar.preferredSize.height -
                                   MediaQuery.of(context).padding.top) *
-                              0.1
+                              0.2
                           : (MediaQuery.of(context).size.height -
                                   appBar.preferredSize.height -
                                   MediaQuery.of(context).padding.top) *

@@ -1,3 +1,4 @@
+import 'package:binge/screens/about_us_screen.dart';
 import 'package:binge/screens/fav_screen.dart';
 import 'package:binge/screens/home_screen.dart';
 import 'package:binge/screens/movies_screen.dart';
@@ -83,7 +84,7 @@ class AppDrawer extends StatelessWidget {
                   Divider(),
                   InkWell(
                     onTap: () =>
-                        Navigator.of(context).pushNamed(HomeScreen.routeName),
+                        Navigator.of(context).pushReplacementNamed(HomeScreen.routeName),
                     child: ListTile(
                       leading: Icon(
                         Icons.list,
@@ -96,14 +97,17 @@ class AppDrawer extends StatelessWidget {
                     ),
                   ),
                   Divider(),
-                  ListTile(
-                    leading: Icon(
-                      Icons.info_outline,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      "About Us",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                  InkWell(
+                    onTap: () => Navigator.of(context).pushReplacementNamed(AboutUsScreen.routeName),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.info_outline,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "About Us",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
                     ),
                   ),
                 ],
