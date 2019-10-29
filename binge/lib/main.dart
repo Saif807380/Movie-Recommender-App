@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   static bool loaded = false;
 
   Future<void> getSelectedGenres() async {
-    final url = 'http://saifkazi.pythonanywhere.com//get_select_genres';
+    final url = 'http://saifkazi.pythonanywhere.com/get_select_genres';
     final response = await http.get(url);
     setState(() {
       final Map<String, dynamic> data = jsonDecode(response.body);
