@@ -18,7 +18,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
   bool loaded = true;
 
   Future<void> getSuggestions() async {
-    final url = 'http://saifkazi.pythonanywhere.com//suggestions';
+    final url = 'http://saifkazi.pythonanywhere.com/suggestions';
     final response = await http.get(url);
     setState(() {
       final Map<String, dynamic> data = jsonDecode(response.body);

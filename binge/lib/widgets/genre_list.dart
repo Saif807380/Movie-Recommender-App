@@ -23,7 +23,7 @@ class _GenreListState extends State<GenreList> {
 
   Future<void> sendSelectedGenres() async {
     print(Genres.selectedGenres);
-    final url = 'http://saifkazi.pythonanywhere.com//send_select_genres';
+    final url = 'http://saifkazi.pythonanywhere.com/send_select_genres';
     final response = await http.post(url,
         headers: {
           "Accept": "application/json",

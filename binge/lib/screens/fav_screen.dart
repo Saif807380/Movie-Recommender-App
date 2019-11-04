@@ -17,7 +17,7 @@ class _FavScreenState extends State<FavScreen> {
   bool loaded = false;
 
   Future<void> getFavourites() async {
-    final url = 'http://saifkazi.pythonanywhere.com//get_select_genres';
+    final url = 'http://saifkazi.pythonanywhere.com/get_select_genres';
     final response = await http.get(url);
     setState(() {
       final Map<String, dynamic> data = jsonDecode(response.body);

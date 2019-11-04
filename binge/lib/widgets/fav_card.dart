@@ -39,7 +39,7 @@ class _FavCardState extends State<FavCard> {
 
 
   Future<void> sendLikedMovies() async {
-    final url = 'http://saifkazi.pythonanywhere.com//send_liked_movies';
+    final url = 'http://saifkazi.pythonanywhere.com/send_liked_movies';
     final response = await http.post(url,
         headers: {
           "Accept": "application/json",
