@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   static bool loaded = false;
 
   Future<void> getSelectedGenres() async {
-    final url = 'http://saifkazi.pythonanywhere.com/get_select_genres';
+    final url = 'http://saifkazi.pythonanywhere.com//get_select_genres';
     final response = await http.get(url);
     setState(() {
       final Map<String, dynamic> data = jsonDecode(response.body);
@@ -41,11 +41,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     getSelectedGenres();
-
   }
 
   @override
   Widget build(BuildContext context) {
+
     final ThemeData myTheme = ThemeData(
       primaryColor: Color.fromRGBO(23, 32, 42, 1),
       accentColor: Color.fromRGBO(205, 97, 85, 1),
