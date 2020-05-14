@@ -11,3 +11,23 @@ For movie suggestions for the case where no movies have been liked by the user, 
 When there are enough number of liked movies ( this number can be set ), the movies are recommended on the basis of their similarity by any one of the two methods:
 1) A Cosine Similarity Function
 2) Using the .corr() built-in Pandas method
+
+## Setup
+
+Clone the repository
+```bash
+$ git clone https://github.com/Saif807380/Movie-Recommender-App
+```
+Run the server
+```bash
+$ python test.py
+```
+Create an ngrok tunnel for the localhost
+```bash
+$ ngrok port PORT_NUMBER
+```
+
+Build the app
+```bash
+$ flutter build
+```
